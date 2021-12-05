@@ -49,7 +49,7 @@ Since these methods do not change the tree, no balancing is needed.
 - `printPre`: This method prints a tree in Pre-Order notation to the console
 - `printIn`: This method prints a tree in In-Order notation to the console
 - `printPost`: This method prints a tree in Post-Order notation to the console
-- `printDOT`: This method prints a tree in DOT file format to the output file. We used Graphviz to visual the DOT file
+- `printDOT`: This method prints a tree in DOT file format to the output file. We used [Graphviz](https://edotor.net/) to visual the DOT file
 
 ---
 #### 3. main.cpp
@@ -66,11 +66,11 @@ This file is a simple text file with a script of the entire movie, "Shrek". This
 
 #### 6. dataset.txt
 
-This file is a comprehensive text file with Google Search data taken from Kaggle. See [here](#https://www.kaggle.com/GoogleNewsLab/food-searches-on-google-since-2004) for more information about the data itself.
+This file is a comprehensive text file with Google Search data taken from Kaggle. See [here](https://www.kaggle.com/GoogleNewsLab/food-searches-on-google-since-2004) for more information about the data itself.
 
 ### **Compilation**
 
-The process of compilation is fairly straight forward. Simply download the `main.cpp`, `ArbyTree.cpp`, `ArbyTree.h`, and one text file of interest. Next, upload them into your IDE. All that's left to do is update the main.cpp to function however you'd like. Should you use either of the movie scripts, you will want to run the prepared function `readMovie(string)` to read from the movie script and store all of the words into a tree. If you want to see the output visualization of the DOT file, we recommend you to use [Graphviz](#https://edotor.net/). If you decide to use our dataset, then you may want to run the `dataset()` function, which will run a console based program to write trend data to an output file.
+The process of compilation is fairly straight forward. Simply download the `main.cpp`, `ArbyTree.cpp`, `ArbyTree.h`, and one text file of interest. Next, upload them into your IDE. All that's left to do is update the main.cpp to function however you'd like. Should you use either of the movie scripts, you will want to run the prepared function `readMovie(string)` to read from the movie script and store all of the words into a tree. If you want to see the output visualization of the DOT file, we recommend you to use [Graphviz](https://edotor.net/). If you decide to use our dataset, then you may want to run the `dataset()` function, which will run a console based program to write trend data to an output file.
 
 Contributors:
 Norman Winn, Cam Amarel, Zach Breene, Quinn Aguilar
