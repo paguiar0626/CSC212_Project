@@ -2,7 +2,7 @@
 
 <h2 align="center"> CSC212 Fall 2021: Norman Winn, Cam Amarel, Quinn Aguilar, Zach Breene </h2>
 
-## Table of contents
+## Table of Contents
 * [Background](#background)
 * [Documentation](#documentation)
 * [Compilation](#compilation)
