@@ -27,7 +27,7 @@ class tree {
 
   private:
 
-		std::ofstream output_file;
+    std::ofstream output_file;
     node* root;
     int treecount = 0;
 
@@ -54,7 +54,7 @@ class tree {
     void preorder(node* base);
     void inorder(node* base);
     void postorder(node* base);
-		void DotOut(node* base, int& i);
+    void DotOut(node* base, int& i);
 
     
   public:
@@ -69,14 +69,13 @@ class tree {
     void removeD(std::string d);
     node* find(std::string d);
     bool search(std::string d);
-
+    int getNodeCount(std::string d);
+	
     // Extra Methods / Bugfixing Methods
     void printPre();
     void printIn();
     void printPost();
-		void printDOT();
-
-    int getNodeCount(std::string);
+    void printDOT();
 
     std::string Lower(std::string in);
 };
