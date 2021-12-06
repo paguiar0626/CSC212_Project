@@ -1,6 +1,6 @@
 <h1 align="center"> Left-Leaning Red-Black Binary Search Tree  </h1>
 
-<h2 align="center"> CSC212 Fall 2021: Norman Winn, Cam Amarel, Quinn Aguilar, Zach Breene </h2>
+<h2 align="center"> CSC212 Fall 2021: Norman Winn, Cam Amarel, Quinn Aguilar</h2>
 
 ## Table of Contents
 * [Background](#background)
@@ -71,6 +71,3 @@ This file is a comprehensive text file with Google Search data taken from Kaggle
 ### **Compilation**
 
 The process of compilation is fairly straight forward. Simply download the `main.cpp`, `ArbyTree.cpp`, `ArbyTree.h`, and one text file of interest. Next, upload them into your IDE. All that's left to do is update the main.cpp to function however you'd like. Should you use either of the movie scripts, you will want to run the prepared function `readMovie(string)` to read from the movie script and store all of the words into a tree. If you want to see the output visualization of the DOT file, we recommend you to use [Graphviz](https://edotor.net/). If you decide to use our dataset, then you may want to run the `dataset()` function, which will run a console based program to write trend data to an output file.
-
-Contributors:
-Norman Winn, Cam Amarel, Zach Breene, Quinn Aguilar
