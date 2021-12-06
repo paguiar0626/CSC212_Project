@@ -6,6 +6,7 @@
 * [Background](#background)
 * [Documentation](#documentation)
 * [Compilation](#compilation)
+* [Contribution](#contribution)
 
 ### **Background:**
 
@@ -71,3 +72,20 @@ This file is a comprehensive text file with Google Search data taken from Kaggle
 ### **Compilation**
 
 The process of compilation is fairly straight forward. Simply download the `main.cpp`, `ArbyTree.cpp`, `ArbyTree.h`, and one text file of interest. Next, upload them into your IDE. All that's left to do is update the main.cpp to function however you'd like. Should you use either of the movie scripts, you will want to run the prepared function `readMovie(string)` to read from the movie script and store all of the words into a tree. If you want to see the output visualization of the DOT file, we recommend you to use [Graphviz](https://edotor.net/). If you decide to use our dataset, then you may want to run the `dataset()` function, which will run a console based program to write trend data to an output file.
+
+### **Contribution**
+
+Cam-Amaral:
+* Technological Set-Up
+* Graphviz Visualization
+* Implementation of LLRBBST
+* Researched LLRBBSTs
+
+Norman-Winn:
+* Dataset Collection and Manipulation
+* Implementation of LLRBBST
+* Researched LLRBBST
+* Coordination and Organization of Group Meetings
+
+Quinn Aguiar:
+* Presentation Preparation
