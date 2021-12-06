@@ -84,10 +84,10 @@ Cam-Amaral:
 Norman-Winn:
 * Dataset Collection and Manipulation
 * Implementation of LLRBBST
-* Researched LLRBBST
+* Researched LLRBBSTs
 * Coordination and Organization of Group Meetings
 
 Quinn Aguiar:
 * Presentation Preparation
 * Implementation of LLRBBST
-* Researched LLRBBST
+* Researched LLRBBSTs
