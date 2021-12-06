@@ -68,7 +68,6 @@ void writeGraph(std::vector<std::vector<char>>* graph, std::string outFile) {
   return;
 }
 
-
 void timeLapse(tree* Foodstuff) {
   std::string food;
   std::string year1;
@@ -127,10 +126,30 @@ void timeLapse(tree* Foodstuff) {
   return;
 }
 
+void readMovie(std::string inFile) {
+  tree Movia;
+  std::ifstream file(inFile);
+  std::string script;
+  
+  std::string word;
 
+  while (std::getline(file,script)) {
+    
+    std::istringstream ss(script);
 
-
-
+    while(ss >> word) {
+      for (int i = 0; i < word.length(); i++){
+        if (word[i] > 0x40 && word[i] < 0x5b){
+          word[i] += 0x20;
+        }
+      }
+      std::cout << word;
+      Movia.insert(word);
+    }
+  }
+  Movia.printDOT();
+  Movia.~tree();
+}
 
 void time_func_ins(){
   
@@ -211,12 +230,35 @@ void time_func_tree() {
 }
 
 
-
-/*
-
-*/
-
 int main(int argc, char** argv) {
+  
+  tree Movia;
+  std::ifstream file("beeMovieScript.txt");
+  std::string script;
+  
+  std::string word;
+
+  while (std::getline(file,script)) {
+    
+    std::istringstream ss(script);
+
+    while(ss >> word) {
+      for (int i = 0; i < word.length(); i++){
+        if (word[i] > 0x40 && word[i] < 0x5b){
+          word[i] += 0x20;
+        }
+      }
+      std::cout << word;
+      Movia.insert(word);
+    }
+  }
+  Movia.printDOT();
+  Movia.~tree();
+
+
+
+
+  /*
   tree Foodstuff;
   readDataset(&Foodstuff, argv[1]);
   bool running = true;
@@ -229,11 +271,10 @@ int main(int argc, char** argv) {
     }
   }
   Foodstuff.~tree();
-  
+  */
   
   //time_func_tree();
 
-  
   /*
 	tree three;
 	
