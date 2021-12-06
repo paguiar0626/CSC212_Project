@@ -60,18 +60,16 @@ void writeGraph(std::vector<std::vector<char>>* graph, std::string outFile) {
     }
     output_file << "\n";
   }
-  output_file << "__";
+  output_file << "______";
   for (int i = 0; i < graph->size(); i++) {
     output_file << "____";
   }
-  output_file << "____";
+  
   return;
 }
 
 void timeLapse(tree* Foodstuff) {
-  std::string food;
-  std::string year1;
-  std::string year2;
+  std::string food, year1, year2, week;
   std::cout << "Please enter the food of interest: ";
   std::cin >> food;
   std::cout << "Please enter the first year: ";
@@ -90,7 +88,54 @@ void timeLapse(tree* Foodstuff) {
     graph.push_back(row);
   }
 
-  std::string week;
+  for (int i = 1; i <= 52; i++) {
+    if (i < 10) {
+      std::string thisWeek = std::to_string(i);
+      week = ('0' + thisWeek);
+    } else {
+      week = std::to_string(i);
+    }
+
+    int point1 = (*Foodstuff).getNodeCount(food + year1 + "-" + week);
+    int point2 = (*Foodstuff).getNodeCount(food + year2 + "-" + week);
+
+    if ((point1 == -1) && (point2 == -1)) {
+      continue;
+    } else if (point1 == -1) {
+      graph[25 - point2/4][i-1] = 'O';
+    } else if (point2 == -1) {
+      graph[25 - point1/4][i-1] = 'X';
+    } else if (point1 == point2) {
+      graph[25 - point1/4][i-1] = 'H';
+    } else {
+      graph[25 - point1/4][i-1] = 'X';
+      graph[25 - point2/4][i-1] = 'O';
+    }
+  }
+  writeGraph(&graph, outFile);
+  std::cout << "File successfully written\n\n";
+  return;
+}
+
+void yearCompare(tree* Foodstuff) {
+  std::string food1, food2, year, week;
+  std::cout << "Please enter the first food of interest: ";
+  std::cin >> food1;
+  std::cout << "Please enter the second food of interest: ";
+  std::cin >> food2;
+  std::cout << "Please enter the year: ";
+  std::cin >> year;
+
+  std::string outFile = food1 + food2 + year + ".txt";
+
+  std::vector<std::vector<char>> graph;
+  for (int i = 0; i < 25; i++) {
+    std::vector<char> row;
+    for (int j = 0; j < 52; j++) {
+      row.push_back(' ');
+    }
+    graph.push_back(row);
+  }
 
   for (int i = 1; i <= 52; i++) {
     if (i < 10) {
@@ -100,16 +145,62 @@ void timeLapse(tree* Foodstuff) {
       week = std::to_string(i);
     }
 
-    std::cout << (food + year1 + '-' + week) << "    ";
-
-    int point1 = (*Foodstuff).getNodeCount(food + year1 + "-" + week);
-    int point2 = (*Foodstuff).getNodeCount(food + year2 + "-" + week);
-
-    std::cout << point1 << ' ' << point2 << ' ' << std::endl;
-
+    int point1 = (*Foodstuff).getNodeCount(food1 + year + "-" + week);
+    int point2 = (*Foodstuff).getNodeCount(food2 + year + "-" + week);
 
     if ((point1 == -1) && (point2 == -1)) {
-      std::cout << "boop";
+      continue;
+    } else if (point1 == -1) {
+      graph[25 - point2/4][i-1] = 'O';
+    } else if (point2 == -1) {
+      graph[25 - point1/4][i-1] = 'X';
+    } else if (point1 == point2) {
+      graph[25 - point1/4][i-1] = 'H';
+    } else {
+      graph[25 - point1/4][i-1] = 'X';
+      graph[25 - point2/4][i-1] = 'O';
+    }
+  }
+  writeGraph(&graph, outFile);
+  std::cout << "File successfully written\n\n";
+  return;
+}
+
+void dualComparison(tree* Foodstuff) {
+  std::string food1, food2, year1, year2, week;
+  std::cout << "Please enter the first food of interest: ";
+  std::cin >> food1;
+  std::cout << "Please enter the year for the first food: ";
+  std::cin >> year1;
+  std::cout << "Please enter the second food of interest: ";
+  std::cin >> food2;
+  std::cout << "Please enter the year for the second food: ";
+  std::cin >> year2;
+
+  std::string outFile = food1 + year1 + food2 + year2 + ".txt";
+
+  std::vector<std::vector<char>> graph;
+  for (int i = 0; i < 25; i++) {
+    std::vector<char> row;
+    for (int j = 0; j < 52; j++) {
+      row.push_back(' ');
+    }
+    graph.push_back(row);
+  }
+
+  for (int i = 1; i <= 52; i++) {
+    if (i < 10) {
+      std::string thisWeek = std::to_string(i);
+      week = ('0' + thisWeek);
+    } else {
+      week = std::to_string(i);
+    }
+
+    int point1 = (*Foodstuff).getNodeCount(food1 + year1 + "-" + week);
+    int point2 = (*Foodstuff).getNodeCount(food2 + year2 + "-" + week);
+
+    if ((point1 == -1) && (point2 == -1)) {
+      continue;
     } else if (point1 == -1) {
       graph[25 - point2/4][i-1] = 'O';
     } else if (point2 == -1) {
@@ -229,49 +320,27 @@ void time_func_tree() {
   return;
 }
 
-
-int main(int argc, char** argv) {
-  
-  tree Movia;
-  std::ifstream file("beeMovieScript.txt");
-  std::string script;
-  
-  std::string word;
-
-  while (std::getline(file,script)) {
-    
-    std::istringstream ss(script);
-
-    while(ss >> word) {
-      for (int i = 0; i < word.length(); i++){
-        if (word[i] > 0x40 && word[i] < 0x5b){
-          word[i] += 0x20;
-        }
-      }
-      std::cout << word;
-      Movia.insert(word);
-    }
-  }
-  Movia.printDOT();
-  Movia.~tree();
-
-
-
-
-  /*
+void running(std::string inFile) {
   tree Foodstuff;
-  readDataset(&Foodstuff, argv[1]);
-  bool running = true;
-  while (running) {
+  readDataset(&Foodstuff, inFile);
+  bool active = true;
+  while (active) {
     char choice = displayOptions();
     if (choice == 'Q') {
-      running = false;
+      active = false;
     } else if (choice == '1') {
       timeLapse(&Foodstuff);
+    } else if (choice == '2') {
+      yearCompare(&Foodstuff);
+    } else {
+      dualComparison(&Foodstuff);
     }
   }
   Foodstuff.~tree();
-  */
+}
+
+int main(int argc, char** argv) {
+  running(argv[1]);
   
   //time_func_tree();
 
