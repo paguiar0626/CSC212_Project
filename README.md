@@ -1,6 +1,6 @@
 <h1 align="center"> Left-Leaning Red-Black Binary Search Tree  </h1>
 
-<h2 align="center"> CSC212 Fall 2021: Norman Winn, Cam Amarel, Quinn Aguilar</h2>
+<h2 align="center"> CSC212 Fall 2021: Norman Winn, Cam Amarel, Quinn Aguiar</h2>
 
 ## Table of Contents
 * [Background](#background)
