@@ -9,7 +9,7 @@
 
 ### **Background:**
 
-The Left-Leaning Red-Black Binary Search Tree (LLRBBST) is a specialized version of the Red-Black Binary Search Tree. Left Leaning refers to an added set of rules where red nodes must be the left child of their parent node. The implication of this rule adds a couple of mechanisms which increases the efficiency of the dataset by improving the worst case runtimes. As a result of these added rules, our implementation of the LLRBBST performs the following standard methods (insertion, deletion, and search) in log(n) runtime.
+The Left-Leaning Red-Black Binary Search Tree (LLRBBST) is a specialized version of the Red-Black Binary Search Tree. Left Leaning refers to an added set of rules where red nodes (symbolizing red links in our case), must be the left child of their parent node. The implication of this rule adds a couple of mechanisms which increases the efficiency of the dataset by improving the worst case runtimes. As a result of these added rules, our implementation of the LLRBBST performs the following standard methods (insertion, deletion, and search) in log(n) runtime.
 
 ### **Documentation**
 
