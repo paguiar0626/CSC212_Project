@@ -32,6 +32,21 @@ void readDataset(tree* Foodstuff, std::string inFile) {
   return;
 }
 
+void printKey(std::ostream& outFile, std::vector<std::string>* data) {
+  if ((*data)[1][0] == ' ') {
+    outFile << "X = " << (*data)[0] << "searches in the year " << (*data)[2] << "\n";
+    outFile << "O = " << (*data)[0] << "searches in the year " << (*data)[3] << "\n";
+  } else if ((*data)[3][0] == ' ') {
+    outFile << "X = " << (*data)[0] << "searches in the year " << (*data)[2] << "\n";
+    outFile << "O = " << (*data)[1] << "searches in the year " << (*data)[2] << "\n";
+  } else {
+    outFile << "X = " << (*data)[0] << "searches in the year " << (*data)[2] << "\n";
+    outFile << "O = " << (*data)[1] << "searches in the year " << (*data)[3] << "\n";
+  }
+  outFile << "Any 'H's are points where each data point shares the same search frequency.\n";
+  return;
+}
+
 char displayOptions() {
   char choice;
   std::cout << "Which option would you like to do?\n";
@@ -48,8 +63,10 @@ char displayOptions() {
   return choice;
 }
 
-void writeGraph(std::vector<std::vector<char>>* graph, std::string outFile) {
+void writeGraph(std::vector<std::vector<char>>* graph, std::string outFile, std::vector<std::string>* data) {
   std::ofstream output_file(outFile);
+  
+  printKey(output_file, data);
   for(int i = 0; i < graph->size(); i++){
     output_file << '|' << ' ';
     for(int j = 0; j < (*graph)[i].size(); j++){
@@ -109,7 +126,12 @@ void timeLapse(tree* Foodstuff) {
       graph[25 - point2/4][i-1] = 'O';
     }
   }
-  writeGraph(&graph, outFile);
+  std::vector<std::string> data;
+  data.push_back(food);
+  data.push_back(" ");
+  data.push_back(year1);
+  data.push_back(year2);
+  writeGraph(&graph, outFile, &data);
   std::cout << "File successfully written\n\n";
   return;
 }
@@ -158,7 +180,12 @@ void yearCompare(tree* Foodstuff) {
       graph[25 - point2/4][i-1] = 'O';
     }
   }
-  writeGraph(&graph, outFile);
+  std::vector<std::string> data;
+  data.push_back(food1);
+  data.push_back(food2);
+  data.push_back(" ");
+  data.push_back(year);
+  writeGraph(&graph, outFile, &data);
   std::cout << "File successfully written\n\n";
   return;
 }
@@ -209,7 +236,12 @@ void dualComparison(tree* Foodstuff) {
       graph[25 - point2/4][i-1] = 'O';
     }
   }
-  writeGraph(&graph, outFile);
+  std::vector<std::string> data;
+  data.push_back(food1);
+  data.push_back(food2);
+  data.push_back(year1);
+  data.push_back(year2);
+  writeGraph(&graph, outFile, &data);
   std::cout << "File successfully written\n\n";
   return;
 }
@@ -345,7 +377,6 @@ int main(int argc, char** argv) {
 	tree three;
 	
   std::vector<std::string> Arr = {"chicken", "ball", "banana", "petabyte", "crumbling", "chicken", "arbys", "arbys", "powerful", "kanye", "gourmet", "eiffel", "alarm", "alarm", "curriculum", "negotiation", "rescue", "establish", "arbys", "petabyte", "doctor", "negotiation"};
-
   for (int i = 0;  i < Arr.size(); i++){
     three.insert(Arr[i]);
     
@@ -353,7 +384,6 @@ int main(int argc, char** argv) {
   }
   
   three.printDOT();
-
 	three.~tree();
   */ 
 }
