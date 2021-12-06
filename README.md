@@ -89,3 +89,5 @@ Norman-Winn:
 
 Quinn Aguiar:
 * Presentation Preparation
+* Implementation of LLRBBST
+* Researched LLRBBST
