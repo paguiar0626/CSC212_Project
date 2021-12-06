@@ -29,8 +29,6 @@ void readDataset(tree* Foodstuff, std::string inFile) {
     std::cout << (lineInfo[0] + lineInfo[2]) << '\n';
   }
 
-  std::cout << "beep";
-
   return;
 }
 
@@ -40,14 +38,13 @@ char displayOptions() {
   std::cout << "1. Compare the change in search frequency of one food item in different years\n";
   std::cout << "2. Compare two foods' search frequencies in the same year\n";
   std::cout << "3. Compare two foods' search frequencies in different years\n";
-	std::cout << "Q. Quit Terminal\n\n";
-
-	std::cout << "Enter Choice: ";
-	std::cin >> choice;
-	if ((choice != '1') && (choice != '2') && (choice != '3') && (choice != 'Q')) {
-		std::cout << "\nInvalid Choice... please try again...\n\n";
-		choice = displayOptions();
-	}
+  std::cout << "Q. Quit Terminal\n\n";
+  std::cout << "Enter Choice: ";
+  std::cin >> choice;
+  if ((choice != '1') && (choice != '2') && (choice != '3') && (choice != 'Q')) {
+	std::cout << "\nInvalid Choice... please try again...\n\n";
+	choice = displayOptions();
+  }
   return choice;
 }
 
