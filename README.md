@@ -55,7 +55,13 @@ Since these methods do not change the tree, no balancing is needed.
 ---
 #### 3. main.cpp
 
-(WIP)
+The main.cpp has many preloaded functions for you to replicate our work. 
+
+`readMovie()` - This function will read from a file of space-separated words, create an LLRBBST, write the tree out to a DOT file, and then delete the tree.
+
+`running()` - This function runs a terminal based program which will take the dataset we provided and make a tree out of it, then you can input the specific information you'd like to see and create a trend graph to compare whatever data you may be interested in.
+
+`time_func_ins()` + `time_func_tree()` - These two functions can be used to compare the runtimes of sorting between the LLRBBST and Insertion Sort. Since the insert method auto-sorts, we simply compare insertion into a tree to sorting using insertion.
 
 #### 4. beeMovieScript.txt
 
