@@ -324,12 +324,9 @@ void tree::DotOut(node* base, int& i){
 		output_file << "\t\"" << base->data.first << "\" -- \"" << base->right->data.first << "\" [style = bold]\n";
 	}
 
-	//std::cout << "beep";
-
 	DotOut(base->left, i);
 	DotOut(base->right, i);
 }
-
 
 
 /*
@@ -343,6 +340,7 @@ void tree::insert(std::string d) {
   return;
 }
 
+// This method calls the insertNodeC() function, which creates a new node with "c" duplicate nodes
 void tree::insertC(std::string d, int c) {
   root = insertNodeC(d, c, root);
   root->data.second = 'b';
@@ -392,6 +390,7 @@ void tree::printPost() {
   return;
 }
 
+// This method calls the DotOut() function to print the data in the tree into DOT file format
 void tree::printDOT(){
 	output_file.open("graph.dot");
 	output_file << "graph {\n";
@@ -408,11 +407,4 @@ int tree::getNodeCount(std::string d) {
     return curios->countof;
   }
   return 0;
-}
-
-std::string tree::Lower(std::string in){
-  for (int i = 0; i < in.size(); i++){
-    in[i] = tolower(in[i]);
-  }
-  return in;
 }
