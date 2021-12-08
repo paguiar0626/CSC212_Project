@@ -366,4 +366,5 @@ void running(std::string inFile) {
 }
 
 int main(int argc, char** argv) {
+  return 0;
 }
