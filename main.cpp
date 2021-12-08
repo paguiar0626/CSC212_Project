@@ -366,5 +366,7 @@ void running(std::string inFile) {
 }
 
 int main(int argc, char** argv) {
+	
+  //Insert functions as needed
   return 0;
 }
