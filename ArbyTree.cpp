@@ -5,7 +5,7 @@
 #include <cctype>
 
 //--------------------------NODE METHODS-------------------------//
-// Default Constructor
+// Overloaded Constructor
 node::node(std::string d) {
   data.first = d;
   data.second = 'r';
@@ -14,6 +14,7 @@ node::node(std::string d) {
   right = nullptr;
 }
 
+// Overloaded Constructor
 node::node(std::string d, int c) {
   data.first = d;
   data.second = 'r';
@@ -63,7 +64,7 @@ node* tree::rotateRight(node* parent) {
   parent->left = grandchild;
   child->right = parent;
 
-	char temp = child->data.second;
+  char temp = child->data.second;
   child->data.second = parent->data.second;
   parent->data.second = 'r';
   return child;
@@ -392,10 +393,10 @@ void tree::printPost() {
 
 // This method calls the DotOut() function to print the data in the tree into DOT file format
 void tree::printDOT(){
-	output_file.open("graph.dot");
-	output_file << "graph {\n";
-	DotOut(root, treecount);
-	output_file << '}';
+  output_file.open("graph.dot");
+  output_file << "graph {\n";
+  DotOut(root, treecount);
+  output_file << '}';
   output_file.close();
 	return;
 }
