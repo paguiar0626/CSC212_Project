@@ -76,6 +76,4 @@ class tree {
     void printIn();
     void printPost();
     void printDOT();
-
-    std::string Lower(std::string in);
 };
