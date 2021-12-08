@@ -407,5 +407,5 @@ int tree::getNodeCount(std::string d) {
   if (curios) {
     return curios->countof;
   }
-  return 0;
+  return -1;
 }
