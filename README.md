@@ -71,9 +71,9 @@ This file is a simple text file with a copypasta (a common type of internet joke
 
 This file is a simple text file with a script of the entire movie, "Shrek". This is a sample text file that can be used with our implementation.
 
-#### 6. dataset.txt
+#### 6. dataset.txt + original_dataset.txt
 
-This file is a comprehensive text file with Google Search data taken from Kaggle. See [here](https://www.kaggle.com/GoogleNewsLab/food-searches-on-google-since-2004) for more information about the data itself.
+This file is an abbreviated text file with Google Search data taken from Kaggle. We used this version during the presentation. The full version is aptly named "original_dataset.txt". See [here](https://www.kaggle.com/GoogleNewsLab/food-searches-on-google-since-2004) for more information about the data itself.
 
 ### **Compilation**
 
