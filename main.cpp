@@ -369,21 +369,5 @@ void running(std::string inFile) {
 }
 
 int main(int argc, char** argv) {
-  running(argv[1]);
-  
-  //time_func_tree();
-
-  /*
-	tree three;
-	
-  std::vector<std::string> Arr = {"chicken", "ball", "banana", "petabyte", "crumbling", "chicken", "arbys", "arbys", "powerful", "kanye", "gourmet", "eiffel", "alarm", "alarm", "curriculum", "negotiation", "rescue", "establish", "arbys", "petabyte", "doctor", "negotiation"};
-  for (int i = 0;  i < Arr.size(); i++){
-    three.insert(Arr[i]);
-    
-    //std::cin.get();  
-  }
-  
-  three.printDOT();
-	three.~tree();
-  */ 
+  return 0;
 }
